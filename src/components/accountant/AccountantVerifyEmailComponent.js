@@ -83,7 +83,7 @@ export class AccountantVerifyEmailComponent extends Component {
         
     }
 
-    onInputChangeHandler = (e) => {
+    onInputChangeHandlerVerifyEmail = (e) => {
         const { value, name } = event.target;
         this.setState({ [name]: value }, () => {
             if (name === 'code') {
@@ -158,7 +158,7 @@ export class AccountantVerifyEmailComponent extends Component {
                                 max='6'
                                 min='6'
                                 name="code"
-                                onChange={this.onInputChangeHandler}
+                                onChange={this.onInputChangeHandlerVerifyEmail}
                             />
                         </form>
                         <Text style={Theme.text}>
