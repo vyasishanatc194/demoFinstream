@@ -43,35 +43,7 @@ export class AccountantVerifyEmailComponent extends Component {
 
 
 
-    componentDidMount() {
-        if (localStorage.getItem('userDetail') !== '' && localStorage.getItem('userDetail') !== null){
-            let userDetail = JSON.parse(localStorage.getItem('userDetail'));
-            this.setState({ email : userDetail.email });
-        }else{
-            this.setState({ apiMessage: 'error', message: 'You can not view this page, First register your self then you will redirect here' })
-            setTimeout(function () {
-                this.props.history.push(`/accountantsignup`)
-            }.bind(this), 2000);
-        }
-    }
-
-    onInputChangeHandler = (e) => {
-        const { value, name } = e.target;
-        this.setState({ [name]: value }, () => {
-            if (name === 'code') {
-                if (value === '') {
-                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
-                } else {
-                    this.setState({ [name + 'Error']: '' })
-                }
-                if(value.length > 5){
-                    this.handleSubmit()
-                }
-            }
-        });
-    }
     
-
     handleSubmit = () => {
         let data = {
             email : this.state.email,
@@ -111,8 +83,36 @@ export class AccountantVerifyEmailComponent extends Component {
         
     }
 
+    onInputChangeHandler = (e) => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value }, () => {
+            if (name === 'code') {
+                if (value === '') {
+                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
+                } else {
+                    this.setState({ [name + 'Error']: '' })
+                }
+                if (value.length > 5) {
+                    this.handleSubmit()
+                }
+            }
+        });
+    }
+
     handleRedirect = () => {
         this.props.history.push(`/`)
+    }
+
+    componentDidMount() {
+        if (localStorage.getItem('userDetail') !== '' && localStorage.getItem('userDetail') !== null) {
+            let userDetail = JSON.parse(localStorage.getItem('userDetail'));
+            this.setState({ email: userDetail.email });
+        } else {
+            this.setState({ apiMessage: 'error', message: 'You can not view this page, First register your self then you will redirect here' })
+            setTimeout(function () {
+                this.props.history.push(`/accountantsignup`)
+            }.bind(this), 2000);
+        }
     }
 
     render() {
