@@ -42,15 +42,17 @@ export class AccountantAuthenticationCodeComponent extends Component {
     }
 
     onInputChangeHandlerForCode = (event) => {
-        const { value, name } = event.target;
-        this.setState({ [name]: value }, () => {
-            if (name === 'code') {
-                if (value === '') {
-                    this.setState({ [name + 'Error']: _.startCase(name) + " is required" })
+        const valueField = event.target.value
+        const nameField = event.target.name
+        
+        this.setState({ [nameField]: valueField }, () => {
+            if (nameField === 'code') {
+                if (valueField === '') {
+                    this.setState({ [nameField + 'Error']: _.startCase(nameField) + " is required" })
                 } else {
-                    this.setState({ [name + 'Error']: '' })
+                    this.setState({ [nameField + 'Error']: '' })
                 }
-                if (value.length > 5) {
+                if (valueField.length > 5) {
                     this.handleSubmit()
                 }
             }
