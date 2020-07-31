@@ -41,6 +41,21 @@ export class AccountantAuthenticationCodeComponent extends Component {
         }
     }
 
+    onInputChangeHandler = (e) => {
+        const { value, name } = e.target;
+        this.setState({ [name]: value }, () => {
+            if (name === 'code') {
+                if (value === '') {
+                    this.setState({ [name + 'Error']: _.startCase(name) + " is required" })
+                } else {
+                    this.setState({ [name + 'Error']: '' })
+                }
+                if (value.length > 5) {
+                    this.handleSubmit()
+                }
+            }
+        });
+    }
 
 
     componentDidMount() {
@@ -55,21 +70,6 @@ export class AccountantAuthenticationCodeComponent extends Component {
         }
     }
 
-    onInputChangeHandler = (e) => {
-        const { value, name } = e.target;
-        this.setState({ [name]: value }, () => {
-            if(name === 'code'){
-                if (value === '') {
-                    this.setState({ [name + 'Error']: _.startCase(name) + " is required" })
-                } else {
-                    this.setState({ [name + 'Error']: '' })
-                }
-                if(value.length > 5){
-                    this.handleSubmit()
-                }
-            }
-        });
-    }
     
 
     handleSubmit = () => {
