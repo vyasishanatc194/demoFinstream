@@ -1,0 +1,249 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Accountant Dashboard */
+.accountantwrapper {
+	min-height: 100vh;
+	padding-top: 35px;
+	background-color: #f8f8f8;
+	background-image: url(assets/accountant_img/bg-accountant-tile.png);
+	background-repeat: repeat-x;
+}
+.accountantwrapper .container {
+	max-width: 1245px;
+	margin: auto;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+.accountantwrapper #header {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* User & Teammates */
+.user {
+	margin-left: 25px;
+}
+.teammates {
+	display: flex;
+	align-items: center;
+}
+.teammates a {
+	cursor: pointer;
+	align-self: center;
+}
+.teammates a.adduser {
+	opacity: 0.5;
+	transition: 0.3s;
+}
+.teammates a.adduser:hover {
+	opacity: 1;
+	transition: 0.3s;
+}
+.teammate {
+	margin-left: 5px;
+}
+#adduser {
+	display: inline;
+}
+#tooltip {
+	margin-top: 12px;
+	border-radius: 3px;
+}
+#popupmenu {
+	margin-top: 15px;
+	width: fit-content;
+	padding: 15px;
+	box-shadow: 3px 9px 15px 6px #e7e8ed;
+}
+#avatar {
+	vertical-align: middle;
+}
+
+.badge {
+	display: none;
+}
+
+.user-menu a {
+	display: block;
+	line-height: 34px;
+}
+.customername {
+	margin-right: 15px;
+}
+.tabcontent {
+	padding-top: 60px;
+}
+
+/* Accountant Login */
+#accountantLogin {
+	display: flex;
+	min-height: 100vh;
+}
+#accountantLogin .sideBanner {
+	background-color: #d5f1fb;
+	flex-grow: 1.5;
+	padding-left: 75px;
+	min-width: 410px;
+	max-width: 550px;
+	background-image: url(assets/accountant_img/hero-banner@2x.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-size: 664px 746px;
+}
+#accountantLogin .loginContainer {
+	background-color: rgb(255, 255, 255);
+	flex-grow: 8.5;
+	padding-left: 100px;
+}
+#accountantLogin .signupPlug {
+	display: inline-block;
+	float: right;
+	margin-top: 20px;
+	margin-right: 30px;
+}
+
+/* Others */
+
+.loader{
+	width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99999;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Privacy policy page */
+.section {padding: 3rem 1.5rem; }
+@media screen and (min-width: 1024px) {
+    .section.is-medium {padding: 9rem 1.5rem; }
+	.section.is-large {padding: 18rem 1.5rem; } 
+}
+
+
+@media screen and (max-width: 680px) {
+    .container {
+      padding-left: 30px;
+	  padding-right: 30px; 
+	} 
+}
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 60px;
+  padding-right: 60px; 
+  width: auto; 
+}
+  .container.is-fluid {
+    max-width: none;
+    padding-left: 32px;
+    padding-right: 32px;
+	width: 100%; 
+}
+@media screen and (min-width: 1024px) {
+.container {
+	max-width: 960px; } }
+@media screen and (max-width: 1215px) {
+.container.is-widescreen {
+	max-width: 1152px; } }
+@media screen and (max-width: 1407px) {
+.container.is-fullhd {
+	max-width: 1344px; } }
+@media screen and (min-width: 1216px) {
+.container {
+	max-width: 1152px; } }
+@media screen and (min-width: 1408px) {
+.container {
+	max-width: 1344px; } }
+ul {
+    list-style: none;
+}
+#privacypolicy { position: relative; }
+#privacypolicy h2 { 
+	margin-top: 0px;
+	margin-bottom: 25px;
+	color: #1a2472; 
+	font-size: 44px;
+    font-weight: 800;
+    line-height: 42px;
+    letter-spacing: -1px; }
+#privacypolicy h3 {margin-top: 20px;font-weight: 900;color: #1a2472; }
+/* Invite Customer Component */
+.invitecustomer-component {
+	background-color: white;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 35px;
+	padding-top: 25px;
+	border-radius: 8px;
+	border: #e6e6e6 solid 1px;
+	box-shadow: 3px 9px 15px 6px #e7e8ed;
+	margin-bottom: 70px;
+}
+.invitecustomer-component .customer {
+	flex-grow: 1;
+	flex-direction: column;
+	padding-right: 20px;
+}
+.invitecustomer-component .invitesms {
+	flex-grow: 1;
+	flex-direction: column;
+	padding-right: 20px;
+}
+.invitecustomer-component .invitemail {
+	flex-grow: 1;
+	flex-direction: column;
+	padding-right: 20px;
+}
+.invitecustomer-component .sendinvite {
+	flex-grow: 0;
+}
+
+/* Pending Component */
+.pending-row {
+	background-color: white;
+	padding: 15px;
+	padding-left: 24px;
+	margin-bottom: 2px;
+	color: #66708f;
+	font-size: 15px;
+}
+.pending-row .name {
+	width: 100%;
+	padding-right: 20px;
+}
+.pending-row .mobilenumber {
+	width: 100%;
+	padding-right: 20px;
+}
+.pending-row .email {
+	width: 100%;
+	padding-right: 20px;
+}
+.pending-row .status {
+	flex-grow: 0;
+	align-content: center;
+}
+.pending {
+	background-color: #ff6347;
+	padding: 3px;
+	font-size: 13px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 3px;
+	color: white;
+}
