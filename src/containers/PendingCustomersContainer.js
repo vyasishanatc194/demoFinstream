@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import PendingCustomers from '../components/accountant/PendingCustomers';
 import { updateLoaderStatus, getPendingCustomersData } from '../actions/mainAction'
-const mapStateToProps = (state) => (console.log(state.user ) , {
+const mapStateToProps = (state) => ( {
 
     
     loader: state.user.loader,

@@ -7,10 +7,6 @@ import '../../styles.css';
 // Chakra-UI import components
 import { Flex, Link, Box, } from '@chakra-ui/core';
 
-//Import Api Url and Data
-import { getUrl } from '../../services/network/urls';
-import { get } from '../../services/network/requests';
-
 export class PendingCustomers extends Component {
 
 	constructor(props) {

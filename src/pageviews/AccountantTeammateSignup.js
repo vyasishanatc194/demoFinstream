@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 `;
 
 // App
-export default class AccountantSignup extends Component {
+export default class AccountantTeammateSignup extends Component {
 	render () {
 		return (
 			<ThemeProvider theme={Theme}>

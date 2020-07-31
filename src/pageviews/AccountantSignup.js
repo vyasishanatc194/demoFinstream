@@ -1,6 +1,6 @@
 // Core imports
 import React, { Component } from 'react';
-import { CSSReset,Spinner } from '@chakra-ui/core';
+import { CSSReset } from '@chakra-ui/core';
 import { ThemeProvider } from 'styled-components';
 import { Theme } from '../Theme';
 

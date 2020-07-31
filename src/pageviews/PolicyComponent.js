@@ -9,7 +9,7 @@ import logoFinstream from '../assets/global_img/logo-finstream.svg';
 // import Header from '../components/subcomponent/Header'
 
 // App
-export default class ResetPassword extends Component {
+export default class PolicyComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {

@@ -118,22 +118,20 @@ export class AccountantSignUpComponent extends Component {
 			post(url, data)
 			.then((res) => {
 				console.log(res)
-				const { data: { code, status, message, messages, result } } = res;
-				switch (code) {
-					case 200:
-						if (status) {
-							this.setState({
-                                foundRef : true ,
-                                email : result.registration_email,
-                                phone : result.registration_phone, 
-                                firstName : result.registration_name ,
-                                ref_user_name : result.user_name,
-                                ref_user_email : result.user_email
-                            })
-						}
-						break;
-					default:
-						break;
+				const { data: { code, status, result } } = res;
+				if (code === 200) {
+					
+                    if (status) {
+                        this.setState({
+                            foundRef : true ,
+                            email : result.registration_email,
+                            phone : result.registration_phone, 
+                            firstName : result.registration_name ,
+                            ref_user_name : result.user_name,
+                            ref_user_email : result.user_email
+                        })
+                    }
+					
 				}
 			})
 			.catch((err) => {

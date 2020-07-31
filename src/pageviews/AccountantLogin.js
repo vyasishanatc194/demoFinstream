@@ -18,7 +18,7 @@ import LoginContainer from '../containers/LoginContainer'
 import Header from '../components/subcomponent/Header'
 
 // App
-export default class Login extends Component {
+export default class AccountantLogin extends Component {
 	handleRedirect = () => {
 		this.props.history.push(`/`)
 	}

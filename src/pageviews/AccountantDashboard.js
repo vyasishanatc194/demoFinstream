@@ -1,7 +1,7 @@
 // Core imports
 import React, { Component } from 'react';
 import { CSSReset } from '@chakra-ui/core';
-import styled, { ThemeProvider } from 'styled-components';
+import  { ThemeProvider } from 'styled-components';
 import { Theme, AccountantStyles } from '../Theme';
 
 // CSS imports

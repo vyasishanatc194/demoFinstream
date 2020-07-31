@@ -46,35 +46,32 @@ export class ResetPasswordComponent extends Component {
     onInputChangeHandler = (e) => {
         const { value, name } = e.target;
         this.setState({ [name]: value }, () => {
-            switch (name) {
-                case 'email':
-                    if (value === '') {
-                        this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
+            if (name === 'email') {
+                
+                if (value === '') {
+                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
 
-                    } else {
-                        this.setState({ [name + 'Error']: '' })
+                } else {
+                    this.setState({ [name + 'Error']: '' })
 
-                    }
-                    break;
-                default:
-                    break;
+                }
+                
             }
         });
     }
 
 
     validateField = (name, value) => {
-        switch (name) {
-            case 'email':
-                if (value === '') {
-                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
-                    return false
-                } else {
-                    this.setState({ [name + 'Error']: '' })
-                    return true;
-                }
-            default:
-                return true;
+        if (name === 'email') {
+
+            if (value === '') {
+                this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
+
+            } else {
+                this.setState({ [name + 'Error']: '' })
+
+            }
+
         }
     }
 

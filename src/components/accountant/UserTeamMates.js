@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Theme, AccountantStyles } from '../../Theme';
+
+import { Theme } from '../../Theme';
 import {Redirect} from 'react-router'
 // CSS imports
 import '../../styles.css';
@@ -85,19 +85,17 @@ export class UserTeamMates extends Component {
 		get(url,localStorage.getItem('userToken'))
 		.then((res) => {
 			console.log(res)
-			const { data: { code, status, message, messages, result } } = res;
-			switch (code) {
-				case 200:
-					if (status) {
-						this.setState({
-							teammates : result.teammates ,
-							teammates_count : result.teammates_count
-						})
-					}
-					break;
-				default:
-					break;
+			const { data: { code, status,  result } } = res;
+			if (code === 200) {
+
+				if (status) {
+					this.setState({
+						teammates: result.teammates,
+						teammates_count: result.teammates_count
+					})
+				}
 			}
+			
 		})
 		.catch((err) => {
 			this.props.handlerLoader();
@@ -112,17 +110,15 @@ export class UserTeamMates extends Component {
 		get(url,localStorage.getItem('userToken'))
 		.then((res) => {
 			console.log(res)
-			const { data: { code, status, message, messages, result } } = res;
-			switch (code) {
-				case 200:
-					if (status) {
-						this.setState({
-							user : result ,
-						})
-					}
-					break;
-				default:
-					break;
+			const { data: { code, status, result } } = res;
+			if (code === 200) {
+			
+				if (status) {
+					this.setState({
+						user : result ,
+					})
+				}
+				
 			}
 		})
 		.catch((err) => {
@@ -135,17 +131,15 @@ export class UserTeamMates extends Component {
 	onInputChangeHandler = (e) => {
 		const { value, name } = e.target;
 		this.setState({ [name]: value }, () => {
-			switch (name) {
-				case 'email':
-					if (value === '') {
-						this.setState({ [name + 'Error']: true })
+			if (name === 'email') {
+				
+				if (value === '') {
+					this.setState({ [name + 'Error']: true })
 
-					} else {
-						this.setState({ [name + 'Error']: false })
-					}
-					break;
-				default:
-					break;
+				} else {
+					this.setState({ [name + 'Error']: false })
+				}
+					
 			}
 		});
 	}
@@ -154,11 +148,8 @@ export class UserTeamMates extends Component {
 
 	validateEmail = (text) =>  {
 		let reg = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
-		if (reg.test(text) === false) {
-		  return false;
-		} else {
-		  return true;
-		}
+		return reg.test(text) 
+		
 	};
 	
 	handleSubmit = () => {
@@ -172,7 +163,7 @@ export class UserTeamMates extends Component {
 			post(url, ValidateData, localStorage.getItem('userToken'))
 			.then((res) => {
 				console.log(res)
-				const { data: { code, status, message, messages, result } } = res;
+				const { data: { code, status, message, messages } } = res;
 				switch (code) {
 					case 200:
 						if (status) {

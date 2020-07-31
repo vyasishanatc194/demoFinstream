@@ -8,7 +8,7 @@ import { Theme } from '../Theme';
 import Header from '../components/subcomponent/Header'
 
 // App
-export default class ResetPassword extends Component {
+export default class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {

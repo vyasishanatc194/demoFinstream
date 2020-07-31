@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Theme, AccountantStyles } from '../../Theme';
+import {  AccountantStyles } from '../../Theme';
 
 // CSS imports
 import '../../styles.css';
@@ -73,19 +73,12 @@ export class InviteCustomer extends Component {
 		get(url, localStorage.getItem('userToken'))
 			.then((res) => {
 				console.log(res)
-				const { data: { code, status, message, messages, result } } = res;
-				switch (code) {
-					case 200:
-						if (status) {
-							// this.setState({
-							// 	customers: result.customers,
-							// 	customers_count: result.customers_count
-							// })
-							this.props.getPendingCustomersData(result.customers)
-						}
-						break;
-					default:
-						break;
+				const { data: { code, status,  result } } = res;
+				if (code === 200) {
+					if (status) {
+						this.props.getPendingCustomersData(result.customers)
+					}
+				
 				}
 			})
 			.catch((err) => {
@@ -98,17 +91,13 @@ export class InviteCustomer extends Component {
 	onInputChangeHandler = (e) => {
 		const { value, name } = e.target;
 		this.setState({ [name]: value }, () => {
-			switch (name) {
-				
-				case 'customerName':
-					if (value === '') {
-						this.setState({ [name + 'Error']: true })
-					} else {
-						this.setState({ [name + 'Error']: false })
-					}
-					break;
-				default:
-					break;
+			if (name === 'customerName') {
+				if (value === '') {
+					this.setState({ [name + 'Error']: true })
+				} else {
+					this.setState({ [name + 'Error']: false })
+				}
+			
 			}
 		});
 	}
@@ -160,11 +149,7 @@ export class InviteCustomer extends Component {
 	
 	validateEmail = (text) =>  {
 		let reg = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
-		if (reg.test(text) === false) {
-		  return false;
-		} else {
-		  return true;
-		}
+		return reg.test(text)
 	};
 
 
@@ -191,7 +176,7 @@ export class InviteCustomer extends Component {
 			post(url, inviteData, localStorage.getItem('userToken'))
 			.then((res) => {
 				console.log(res)
-				const { data: { code, status, message, messages, result } } = res;
+				const { data: { code, status, message, messages } } = res;
 				switch (code) {
 					case 200:
 						if (status) {
