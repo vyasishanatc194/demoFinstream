@@ -68,7 +68,6 @@ export class AccountantVerifyEmailComponent extends Component {
                     this.handleSubmit()
                 }
             }
-            
         });
     }
     

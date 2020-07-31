@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-    const dev = process.env.NODE_ENV === 'development';
+    // const dev = process.env.NODE_ENV === 'development';
   return 'http://13.55.251.104/api';
     // if (dev) {
     //   //here make base url 
