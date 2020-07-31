@@ -24,9 +24,9 @@ export const Theme = {
 
 // Accountant global styles
 export const AccountantStyles = {
-	formLabel      : {
-		color : '#0C1E42'
-	},
+	// formLabel      : {
+	// 	color : '#0C1E42'
+	// },
 	input          : {
 		color         : '#66708F',
 		background    : '#F8F8F8',
