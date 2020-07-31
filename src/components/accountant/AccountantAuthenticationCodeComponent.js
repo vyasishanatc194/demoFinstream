@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
 
 
-export class AccountantVerifyEmailComponent extends Component {
+export class AccountantAuthenticationCodeComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {

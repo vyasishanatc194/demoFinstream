@@ -4,26 +4,26 @@ import styled from 'styled-components';
 import { Theme, AccountantStyles } from '../../Theme';
 import _ from 'lodash';
 
-// Image imports
-import logoFinstream from '../../assets/global_img/logo-finstream.svg';
-import verifyEmailBanner from '../../assets/accountant_img/verify-email-banner.svg';
-
 // Chakra-UI import components
 import {Input, Link, Flex, Image, Heading, Text, Alert,AlertIcon, Spinner } from '@chakra-ui/core';
 //Import Api Url and Data
 import { getUrl } from '../../services/network/urls';
 import { post } from '../../services/network/requests';
 
-import toastr from 'toastr'
-import 'toastr/build/toastr.min.css'
 
-const Wrapper = styled.div`
+// Image imports
+import logoFinstream from '../../assets/global_img/logo-finstream.svg';
+import verifyEmailBanner from '../../assets/accountant_img/verify-email-banner.svg';
+
+const Verify = styled.div`
 	background-color: ${Theme.colours.background};
 	display: flex;
 	justify-content: center;
 `;
 
 
+import toastr from 'toastr'
+import 'toastr/build/toastr.min.css'
 
 export class AccountantVerifyEmailComponent extends Component {
     constructor(props) {
@@ -121,7 +121,7 @@ export class AccountantVerifyEmailComponent extends Component {
                 {this.props.loader && <div className="loader">
                     <Spinner />
                 </div>}
-                <Wrapper>
+                <Verify>
                     <Flex
                         flexDirection='column'
                         width='570px'
@@ -167,7 +167,7 @@ export class AccountantVerifyEmailComponent extends Component {
 						</Text>
                         <Image src={verifyEmailBanner} mt='50px' mb='10px' />
                     </Flex>
-                </Wrapper>
+                </Verify>
             </React.Fragment>
         );
     }
