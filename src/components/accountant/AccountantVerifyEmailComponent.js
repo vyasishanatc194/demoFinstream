@@ -83,21 +83,7 @@ export class AccountantVerifyEmailComponent extends Component {
         
     }
 
-    onInputChangeHandlerVerifyEmail = (e) => {
-        const { value, name } = event.target;
-        this.setState({ [name]: value }, () => {
-            if (name === 'code') {
-                if (value === '') {
-                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
-                } else {
-                    this.setState({ [name + 'Error']: '' })
-                }
-                if (value.length > 5) {
-                    this.handleSubmit()
-                }
-            }
-        });
-    }
+    
 
     handleRedirect = () => {
         this.props.history.push(`/`)
@@ -113,6 +99,22 @@ export class AccountantVerifyEmailComponent extends Component {
                 this.props.history.push(`/accountantsignup`)
             }.bind(this), 2000);
         }
+    }
+
+    onInputChangeHandlerVerifyEmail = (e) => {
+        const { value, name } = event.target;
+        this.setState({ [name]: value }, () => {
+            if (name === 'code') {
+                if (value === '') {
+                    this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
+                } else {
+                    this.setState({ [name + 'Error']: '' })
+                }
+                if (value.length > 5) {
+                    this.handleSubmit()
+                }
+            }
+        });
     }
 
     render() {
