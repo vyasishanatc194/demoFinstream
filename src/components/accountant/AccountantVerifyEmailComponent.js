@@ -59,18 +59,14 @@ export class AccountantVerifyEmailComponent extends Component {
         const { value, name } = e.target;
         this.setState({ [name]: value }, () => {
             if (name === 'code') {
-                
                 if (value === '') {
                     this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
-
                 } else {
                     this.setState({ [name + 'Error']: '' })
-
                 }
                 if(value.length > 5){
                     this.handleSubmit()
                 }
-                
             }
         });
     }
