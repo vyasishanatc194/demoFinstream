@@ -41,8 +41,8 @@ export class AccountantAuthenticationCodeComponent extends Component {
         }
     }
 
-    onInputChangeHandler = (e) => {
-        const { value, name } = e.target;
+    onInputChangeHandlerForCode = (event) => {
+        const { value, name } = event.target;
         this.setState({ [name]: value }, () => {
             if (name === 'code') {
                 if (value === '') {
@@ -168,7 +168,7 @@ export class AccountantAuthenticationCodeComponent extends Component {
                                 max='6'
                                 min='6'
                                 name="code"
-                                onChange={this.onInputChangeHandler}
+                                onChange={this.onInputChangeHandlerForCode}
                             />
                         </form>
                         <Text style={Theme.text}>

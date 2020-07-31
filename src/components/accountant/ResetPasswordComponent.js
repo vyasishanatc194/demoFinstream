@@ -63,15 +63,12 @@ export class ResetPasswordComponent extends Component {
 
     validateField = (name, value) => {
         if (name === 'email') {
-
             if (value === '') {
                 this.setState({ [name + 'Error']: _.startCase(name) + " is requied" })
 
             } else {
                 this.setState({ [name + 'Error']: '' })
-
             }
-
         }
     }
 

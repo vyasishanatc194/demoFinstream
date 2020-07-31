@@ -26,6 +26,9 @@ export default class AccountantVerifyEmail extends Component {
 			this.props.history.push(`/accountantdashboard`)
 		}
 	}
+	componentDidMount() {
+		
+	}
 	render () {
 		return (
 			<ThemeProvider theme={Theme}>

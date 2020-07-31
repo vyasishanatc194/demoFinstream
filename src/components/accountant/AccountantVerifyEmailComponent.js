@@ -84,7 +84,7 @@ export class AccountantVerifyEmailComponent extends Component {
     }
 
     onInputChangeHandler = (e) => {
-        const { value, name } = e.target;
+        const { value, name } = event.target;
         this.setState({ [name]: value }, () => {
             if (name === 'code') {
                 if (value === '') {
